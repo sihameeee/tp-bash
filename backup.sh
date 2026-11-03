@@ -1,15 +1,12 @@
+
 #!/bin/bash
 set -Eeuo pipefail
 
 trap 'echo "Erreur à la ligne $LINENO : sauvegarde interrompue." >&2' ERR
 
-if [ "$#" -ne 1 ]; then
-    echo "Utilisation : $0 <dossier>" >&2
-    exit 1
-fi
-
 DOSSIER="$1"
-BACKUP_DIR="backups"
+BACKUP_DIR="/home/sihame/Documents/S9 I hope I can/DevOps/tp-bash/backups"
+DATE=$(date +%Y-%m-%d_%H-%M-%S)
 
 if [ ! -d "$DOSSIER" ]; then
     echo "Erreur : le dossier '$DOSSIER' n'existe pas." >&2
@@ -19,7 +16,6 @@ fi
 mkdir -p "$BACKUP_DIR"
 
 NOM=$(basename "$DOSSIER")
-DATE=$(date +%Y-%m-%d_%H-%M-%S)
 ARCHIVE="$BACKUP_DIR/${NOM}_${DATE}.tar.gz"
 
 tar -czf "$ARCHIVE" "$DOSSIER"
@@ -37,3 +33,4 @@ done
 
 echo "Sauvegarde terminée avec succès."
 exit 0
+

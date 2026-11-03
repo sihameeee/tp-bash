@@ -1,0 +1,6 @@
+[2026-11-03 10:48:24] Début du pipeline CI/CD
+[2026-11-03 10:48:24] Clonage du dépôt https://github.com/sihameeee/tp-bash
+[2026-11-03 10:48:25] Début des tests
+[2026-11-03 10:48:25] Aucun fichier test.sh : tests simulés.
+[2026-11-03 10:48:25] Pipeline terminé avec succès.
+[2026-11-03 10:49:10] ERREUR : URL du dépôt manquante.
